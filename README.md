@@ -1,30 +1,39 @@
 # Midterm Exam - ECGR 8119: Applied AI
 
 ## Overview
-This project involves a classification task using a Cat vs. Dog dataset sourced from Kaggle. The dataset was processed and trained using MobileNetV2, and results were compared between two models.
+This project focuses on a classification task using a well-known Cat vs. Dog dataset sourced from Kaggle. The goal is to build and evaluate two models that classify images as either a cat or a dog. The project explores the use of MobileNetV2 for image classification and a Super-Resolution Generative Adversarial Network (SRGAN) for enhancing image quality.
 
 ### Dataset Preparation
-- **Dataset Source**: [Kaggle Cat vs. Dog Dataset](https://www.kaggle.com/c/dogs-vs-cats)
-- **Image Resizing**: All images were resized to 128x128 pixels.
+- **Dataset Source**: The dataset is available on Kaggle and includes a diverse collection of cat and dog images. This dataset is widely used in machine learning for image classification tasks.
+- **Image Resizing**: All images were resized to 128x128 pixels to standardize the input for the model, which helps improve training efficiency and consistency.
 
 ## Model A
-Model A utilizes the MobileNetV2 architecture to classify images in the dataset. Training results and performance metrics are documented in `ModelAvsModelB.ipynb`.
+Model A leverages the MobileNetV2 architecture, a lightweight deep learning model that is particularly effective for image classification tasks, especially on mobile and embedded devices. 
+
+### Training Process
+- The model was trained on the resized 128x128 images.
+- The training results, including performance metrics such as accuracy, F1 score, AUC (Area Under the Curve), and loss, are documented in `ModelAvsModelB.ipynb`. 
 
 ## SRGAN Implementation
-A Super-Resolution Generative Adversarial Network (SRGAN) was developed based on the original SRGAN paper. The implementation details are as follows:
-- **Generator Input**: 32x32 pixel images.
-- **Generator Output**: Generates high-resolution 128x128 pixel images.
-- **Discriminator**: Used to distinguish between original 128x128 images and the generated ones.
-- **Training**: The model was trained for 150 epochs.
-- **Future Improvements**: It is recommended to train the model for more epochs to achieve better results. Detailed results are shared in `SRGAN.ipynb`.
+A Super-Resolution Generative Adversarial Network (SRGAN) was developed based on the original paper that introduced the architecture. The primary purpose of SRGAN is to generate high-quality images from low-resolution inputs.
+
+### Implementation Details
+- **Generator Input**: The generator takes 32x32 pixel images as input. 
+- **Generator Output**: It produces higher-resolution images (128x128 pixels).
+- **Discriminator**: This component of the model evaluates the authenticity of the generated images, distinguishing between real images and those created by the generator.
+- **Training**: The SRGAN model was trained for 150 epochs. Training for more epochs is recommended to enhance the model's performance further. All results and observations from the training process are detailed in `SRGAN.ipynb`.
 
 ## Model B
-Model B was developed using a modified dataset:
-- **Subset Selection**: 2,500 images were selected from the original dataset.
-- **Image Resizing**: These images were resized to 32x32 pixels and then processed through the generator to produce 128x128 images.
-- **Dataset Integration**: The generated images were added back into the original dataset.
-- **Training**: Model B was trained using the same approach as Model A.
-- **Metrics**: The performance metrics include accuracy, F1 score, AUC, and loss. Results are documented alongside Model A.
+Model B was created to explore the impact of enhanced images on classification performance. 
+
+### Dataset Modification
+- **Subset Selection**: From the original dataset, a subset of 2,500 images was selected.
+- **Image Resizing**: These images were resized to 32x32 pixels and then processed through the SRGAN generator to produce high-resolution 128x128 images.
+- **Dataset Integration**: The generated high-resolution images were added back into the original dataset, enriching the data available for training.
+
+### Training Process
+- Model B was trained using the same methodology as Model A, with the augmented dataset.
+- Performance metrics such as accuracy, F1 score, AUC, and loss were calculated to evaluate the effectiveness of this model. These results are shared alongside those of Model A.
 
 ## Conclusion
-This project explores the application of MobileNetV2 for image classification, alongside the use of SRGAN for image enhancement. The comparative analysis of both models provides insights into their performance and effectiveness in classifying images.
+This project highlights the application of advanced deep learning techniques in image classification. By comparing the performance of MobileNetV2 with and without the use of enhanced images generated by SRGAN, insights can be drawn about the benefits of image resolution and quality in improving model accuracy. The detailed results and comparisons between Model A and Model B can guide further enhancements and applications in the field of image classification and machine learning.
