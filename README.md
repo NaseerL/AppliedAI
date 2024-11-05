@@ -4,7 +4,7 @@
 This project involves a classification task using a Cat vs. Dog dataset sourced from Kaggle. The dataset was processed and trained using MobileNetV2, and results were compared between two models.
 
 ### Dataset Preparation
-- **Dataset Source**: [Kaggle Cat vs. Dog Dataset](link_to_dataset)
+- **Dataset Source**: [Kaggle Cat vs. Dog Dataset](https://www.kaggle.com/c/dogs-vs-cats)
 - **Image Resizing**: All images were resized to 128x128 pixels.
 
 ## Model A
