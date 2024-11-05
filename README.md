@@ -27,7 +27,7 @@ A Super-Resolution Generative Adversarial Network (SRGAN) was developed based on
 Model B was created to explore the impact of enhanced images on classification performance. 
 
 ### Dataset Modification
-- **Subset Selection**: From the original dataset, a subset of 2,500 images was selected.
+- **Subset Selection**: From the original dataset, a subset of 5000 images was selected.
 - **Image Resizing**: These images were resized to 32x32 pixels and then processed through the SRGAN generator to produce high-resolution 128x128 images.
 - **Dataset Integration**: The generated high-resolution images were added back into the original dataset, enriching the data available for training.
 
